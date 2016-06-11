@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.FileChooser ?>
+
+<GridPane prefHeight="626.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yp.dev.tools.controller.MainController">
+    <columnConstraints>
+        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="12.0" />
+        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="102.0" />
+        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="110.0" minWidth="8.0" prefWidth="10.0" />
+        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="97.0" />
+        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="186.0" />
+        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="111.0" />
+        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="299.0" minWidth="10.0" prefWidth="116.0" />
+      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="299.0" minWidth="10.0" prefWidth="111.0" />
+        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="42.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="310.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="243.0" minHeight="4.0" prefHeight="34.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="308.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="287.0" minHeight="0.0" prefHeight="12.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="287.0" minHeight="0.0" prefHeight="7.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="287.0" minHeight="0.0" prefHeight="7.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="287.0" minHeight="4.0" prefHeight="6.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="287.0" minHeight="0.0" prefHeight="12.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Label prefHeight="36.0" prefWidth="761.0" text="      说明：本工具可以根据数据源自动生成Pojo、Dao层的Java代码以及对应的Mapper文件(暂时只支持Mysql数据源)" wrapText="true" GridPane.columnSpan="8">
+            <font>
+                <Font size="14.0" />
+            </font></Label>
+        <Label prefHeight="15.0" prefWidth="86.0" text="选项配置——" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label prefHeight="64.0" prefWidth="49.0" text="数据源：" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="5" />
+        <Label prefHeight="15.0" prefWidth="20.0" text="IP:" textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+        <Label prefHeight="15.0" prefWidth="31.0" text="端口:" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+        <Label text="用户名:" textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+        <Label prefHeight="15.0" prefWidth="33.0" text="密码:" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+        <Label text="数据库:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+        <Label prefHeight="15.0" prefWidth="464.0" text="数据表(多个表用逗号隔开，如不填则对所有表生成代码):   " GridPane.columnIndex="3" GridPane.columnSpan="4" GridPane.rowIndex="5" />
+        <Label text="文件配置:" GridPane.columnIndex="1" GridPane.rowIndex="8" GridPane.rowSpan="4" />
+        <Label text="Dao后缀:" textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+        <Label prefHeight="15.0" prefWidth="56.0" text="Pojo后缀:" textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+        <Label text="Dao包名:" textAlignment="RIGHT" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+        <Label prefHeight="15.0" prefWidth="54.0" text="Pojo包名:" textAlignment="RIGHT" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+        <Label prefHeight="15.0" prefWidth="86.0" text="Dao方法配置: " GridPane.columnIndex="3" GridPane.rowIndex="11" GridPane.valignment="CENTER" />
+        <Label text="目标路径:" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+        <Button mnemonicParsing="false" onAction="#generateCode" prefHeight="33.0" prefWidth="100.0" text="生  成" GridPane.columnIndex="5" GridPane.rowIndex="16" />
+        <Button mnemonicParsing="false" onAction="#cancel" prefHeight="32.0" prefWidth="100.0" text="取  消" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="16" />
+        <Separator prefHeight="0.0" prefWidth="339.0" GridPane.columnIndex="2" GridPane.columnSpan="6" GridPane.rowIndex="7" />
+        <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="6" GridPane.rowIndex="13" />
+        <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="6" GridPane.rowIndex="15" />
+        <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.rowSpan="5" />
+        <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8" GridPane.rowSpan="4" />
+        <TextField fx:id="ip" prefHeight="23.0" prefWidth="166.0" promptText="127.0.0.1" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+        <TextField fx:id="port" maxWidth="89.0" prefHeight="23.0" prefWidth="89.0" promptText="默认3306" text="3306" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+        <TextField fx:id="username" promptText="数据库账号" text="ttsuser" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+        <PasswordField fx:id="password" maxWidth="200.0" promptText="数据库连接密码" text="HTDaBeJ81Nv2" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+        <TextField fx:id="database" promptText="数据库名称" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+        <TextArea fx:id="tabels" maxWidth="490.0" prefHeight="47.0" prefWidth="490.0" promptText="表的名称,如: ins_product,ins_company" wrapText="true" GridPane.columnIndex="4" GridPane.columnSpan="4" GridPane.rowIndex="6" />
+        <TextField fx:id="daoSuffix" maxWidth="50.0" prefHeight="23.0" prefWidth="139.0" promptText="Dao" text="Dao" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+        <TextField fx:id="daoPkg" maxWidth="200.0" promptText="e.g. : xxx.xxx.xxx.dao" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+        <TextField fx:id="pojoSuffix" maxWidth="50.0" promptText="Dto" text="无" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+        <TextField fx:id="pojoPkg" maxWidth="200.0" promptText="e.g.: xxx.xxx.xxx.pojo" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+        <GridPane prefHeight="76.0" prefWidth="544.0" GridPane.columnIndex="4" GridPane.columnSpan="4" GridPane.rowIndex="11">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="144.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="351.0" minWidth="10.0" prefWidth="151.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="351.0" minWidth="10.0" prefWidth="117.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="351.0" minWidth="10.0" prefWidth="132.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="8.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="69.0" minHeight="0.0" prefHeight="11.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <CheckBox fx:id="msSelectById" mnemonicParsing="false" prefHeight="16.0" prefWidth="104.0" selected="true" text="selectById" />
+                <CheckBox fx:id="msSelectByIds" mnemonicParsing="false" text="selectByIds" GridPane.columnIndex="2" />
+                <CheckBox fx:id="msInsert" mnemonicParsing="false" text="insert" GridPane.columnIndex="3" />
+                <CheckBox fx:id="msInsertSelective" mnemonicParsing="false" selected="true" text="insertSelective" GridPane.rowIndex="2" />
+                <CheckBox fx:id="msUpdateById" mnemonicParsing="false" text="updateById" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <CheckBox fx:id="msUpdateSelectiveById" mnemonicParsing="false" selected="true" text="updateSelectiveById" GridPane.columnIndex="1" />
+                <CheckBox fx:id="msDeleteById" mnemonicParsing="false" text="deleteById" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <CheckBox fx:id="msDeleteByIds" mnemonicParsing="false" text="deleteByIds" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+        <TextField fx:id="targetDir" prefHeight="23.0" prefWidth="475.0" promptText="保存结果的目标路径" GridPane.columnIndex="3" GridPane.columnSpan="4" GridPane.rowIndex="14" />
+        <Button mnemonicParsing="false" onAction="#browse" prefHeight="23.0" prefWidth="79.0" text="浏览..." textAlignment="CENTER" GridPane.columnIndex="7" GridPane.rowIndex="14" />
+      <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="Pojo类注解:" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="10" GridPane.valignment="TOP" />
+      <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="Dao类注解:" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="10" GridPane.valignment="TOP" />
+      <TextArea fx:id="pojoAnnotations" prefHeight="200.0" prefWidth="200.0" promptText="Pojo类注解，多个请用逗号隔开，无则不填" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+      <TextArea fx:id="daoAnnotations" maxWidth="200.0" prefHeight="200.0" prefWidth="200.0" promptText="Dao注解，多个请用逗号隔开，无则不填。e.g. : com.qunar.insurance.db.pxc.PXCDao" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+      <Button mnemonicParsing="false" onAction="#testDatasource" prefHeight="30.0" prefWidth="113.0" text="测      试" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+    </children>
+</GridPane>
