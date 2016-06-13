@@ -1,6 +1,5 @@
 package yp.dev.tools.util;
 import java.util.*;
-import java.util.function.Function;
 
 /**
  * Created by yp on 2016/6/9.
