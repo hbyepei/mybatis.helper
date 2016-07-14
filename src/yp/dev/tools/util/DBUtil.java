@@ -180,6 +180,9 @@ public class DBUtil {
         if (type.indexOf(" ") > 0) {
             type = type.substring(0, type.indexOf(" "));
         }
+        if(StringUtil.equalsIgnoreCase(type,"datetime")){
+            type="TIMESTAMP";
+        }
         return type.toUpperCase();
     }
 }

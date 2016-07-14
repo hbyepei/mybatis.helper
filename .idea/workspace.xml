@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9f8c41b-7534-4248-a846-1a18b7605060" name="Default" comment="Mybatis辅助工具">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/yp/dev/tools/util/Function.java" />
+    <list default="true" id="f9f8c41b-7534-4248-a846-1a18b7605060" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_25.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mybatis.helper.iml" afterPath="$PROJECT_DIR$/mybatis.helper.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yp/dev/tools/Main.java" afterPath="$PROJECT_DIR$/src/yp/dev/tools/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yp/dev/tools/util/CollectionUtil.java" afterPath="$PROJECT_DIR$/src/yp/dev/tools/util/CollectionUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yp/dev/tools/util/JavaFileUtil.java" afterPath="$PROJECT_DIR$/src/yp/dev/tools/util/JavaFileUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yp/dev/tools/builder/XmlBuilder.java" afterPath="$PROJECT_DIR$/src/yp/dev/tools/builder/XmlBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yp/dev/tools/ui/dialog/FXOptionPane.java" afterPath="$PROJECT_DIR$/src/yp/dev/tools/ui/dialog/FXOptionPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yp/dev/tools/util/DBUtil.java" afterPath="$PROJECT_DIR$/src/yp/dev/tools/util/DBUtil.java" />
     </list>
     <ignored path="mybatis.helper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,12 +69,12 @@
     <favorites_list name="mybatis.helper" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state relative-caret-position="340">
+              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -80,50 +83,107 @@
       <file leaf-file-name="JavaFileUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/JavaFileUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="680">
+              <caret line="106" column="57" selection-start-line="106" selection-start-column="57" selection-end-line="106" selection-end-column="57" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#genClassComment#0;class#JavaFileUtil#0" expanded="false" />
+                <element signature="method#genMethodComment#0;class#JavaFileUtil#0" expanded="false" />
+                <element signature="method#genPackageAndImports#0;class#JavaFileUtil#0" expanded="false" />
+                <element signature="method#genGetterAndSetters#0;class#JavaFileUtil#0" expanded="false" />
+                <element signature="method#genDaoMethods#0;class#JavaFileUtil#0" expanded="false" />
+                <element signature="method#isLegalFullClassName#0;class#JavaFileUtil#0" expanded="false" />
+                <element signature="class#JdbcType#0;class#JavaFileUtil#0" expanded="true" />
+                <element signature="class#JavaType#0;class#JavaFileUtil#0" expanded="true" />
+                <element signature="method#JavaType#0;class#JavaType#0;class#JavaFileUtil#0" expanded="false" />
+                <element signature="class#MethodSignature#0;class#JavaFileUtil#0" expanded="true" />
+                <element signature="method#MethodSignature#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+                <element signature="method#getDefaultMethods#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+                <element signature="method#fromName#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CollectionUtil.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/CollectionUtil.java">
+      <file leaf-file-name="DBUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/DBUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+            <state relative-caret-position="724">
+              <caret line="184" column="9" selection-start-line="184" selection-start-column="9" selection-end-line="184" selection-end-column="9" />
+              <folding>
+                <element signature="method#getConnection#0;class#DBUtil#0" expanded="false" />
+                <element signature="method#genConnectionUrl#0;class#DBUtil#0" expanded="false" />
+                <element signature="method#getTableNames#0;class#DBUtil#0" expanded="false" />
+                <element signature="method#getTableComments#0;class#DBUtil#0" expanded="false" />
+                <element signature="method#parseRealTableName#0;class#DBUtil#0" expanded="false" />
+                <element signature="method#fitSplitRule#0;class#DBUtil#0" expanded="false" />
+                <element signature="method#parseClassComment#0;class#DBUtil#0" expanded="false" />
+                <marker date="1468484798959" expanded="true" signature="2856:2877" ph="SHOW FULL FI... " />
+                <marker date="1468484798959" expanded="false" signature="4260:4277" ph="SHOW TABLE S... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/StringUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+              <folding>
+                <element signature="method#lowerFirst#0;class#StringUtil#0" expanded="false" />
+                <element signature="method#upperFirst#0;class#StringUtil#0" expanded="false" />
+                <element signature="method#underlineToUpper#0;class#StringUtil#0" expanded="false" />
+                <element signature="method#trim#0;class#StringUtil#0" expanded="false" />
+                <element signature="method#equals#0;class#StringUtil#0" expanded="false" />
+                <element signature="method#equalsIgnoreCase#0;class#StringUtil#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XmlBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/builder/XmlBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+              <folding>
+                <element signature="method#build#0;class#XmlBuilder#0" expanded="false" />
+                <element signature="method#genSelectSql#0;class#XmlBuilder#0" expanded="false" />
+                <element signature="method#genMethodXml#0;class#XmlBuilder#0" expanded="false" />
+                <element signature="method#makeUpdateByIdXml#0;class#XmlBuilder#0" expanded="false" />
+                <element signature="method#makeInsertXml#0;class#XmlBuilder#0" expanded="false" />
+                <element signature="method#makeSelectByIdsXml#0;class#XmlBuilder#0" expanded="false" />
+                <element signature="method#makeSelectByIdXml#0;class#XmlBuilder#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Column.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/pojo/Column.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Function.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/Function.java">
+      <file leaf-file-name="FXOptionPane.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/ui/dialog/FXOptionPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+            <state relative-caret-position="980">
+              <caret line="99" column="23" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DaoBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/builder/DaoBuilder.java">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GeneratorBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/builder/GeneratorBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="2280">
+              <caret line="139" column="82" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -151,10 +211,13 @@
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/yp/dev/tools/Main.java" />
         <option value="$PROJECT_DIR$/src/yp/dev/tools/util/JavaFileUtil.java" />
         <option value="$PROJECT_DIR$/src/yp/dev/tools/util/Function.java" />
         <option value="$PROJECT_DIR$/src/yp/dev/tools/util/CollectionUtil.java" />
+        <option value="$PROJECT_DIR$/src/yp/dev/tools/Main.java" />
+        <option value="$PROJECT_DIR$/src/yp/dev/tools/ui/dialog/FXOptionPane.java" />
+        <option value="$PROJECT_DIR$/src/yp/dev/tools/builder/XmlBuilder.java" />
+        <option value="$PROJECT_DIR$/src/yp/dev/tools/util/DBUtil.java" />
       </list>
     </option>
   </component>
@@ -274,6 +337,86 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fxml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis.helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis.helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis.helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis.helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="builder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis.helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis.helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis.helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis.helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -288,12 +431,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="Console.TableResult.DefaultCopyAction" value="SQL Insert Statements" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="yp.dev.tools.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\IDEAProjects\flight\mybatis.helper\lib" />
       <recent name="D:\ideaProjects\mybatis\mybatis.helper\sample" />
       <recent name="D:\ideaProjects\mybatis\mybatis.helper" />
     </key>
@@ -442,6 +589,17 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
@@ -742,7 +900,13 @@
       <workItem from="1465049221261" duration="1851000" />
       <workItem from="1465668880448" duration="696000" />
       <workItem from="1465808653571" duration="107000" />
-      <workItem from="1465809818087" duration="409000" />
+      <workItem from="1465809818087" duration="817000" />
+      <workItem from="1465976112122" duration="170000" />
+      <workItem from="1468393818247" duration="844000" />
+      <workItem from="1468394782749" duration="429000" />
+      <workItem from="1468417892786" duration="158000" />
+      <workItem from="1468424378315" duration="39000" />
+      <workItem from="1468484617458" duration="198000" />
     </task>
     <task id="LOCAL-00001" summary="Mybatis辅助工具">
       <created>1465669150927</created>
@@ -772,26 +936,30 @@
       <option name="project" value="LOCAL" />
       <updated>1465669433025</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="降低JDK api">
+      <created>1465810249143</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1465810249143</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3063000" />
+    <option name="totallyTimeSpent" value="5309000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="PrintInConsole" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4349776" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -801,19 +969,22 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="PrintInConsole" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Java2SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -821,7 +992,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Mybatis辅助工具" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mybatis辅助工具" />
+    <MESSAGE value="降低JDK api" />
+    <option name="LAST_COMMIT_MESSAGE" value="降低JDK api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -832,7 +1004,134 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/builder/XmlBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1120">
+          <caret line="163" column="91" selection-start-line="163" selection-start-column="91" selection-end-line="163" selection-end-column="91" />
+          <folding>
+            <element signature="method#build#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#genSelectSql#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#genMethodXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeUpdateByIdXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeInsertXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeSelectByIdsXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeSelectByIdXml#0;class#XmlBuilder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/ui/dialog/FXOptionPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="99" column="23" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="139" column="82" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/JavaFileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="16" column="91" selection-start-line="16" selection-start-column="91" selection-end-line="16" selection-end-column="91" />
+          <folding>
+            <element signature="method#genClassComment#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genMethodComment#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genPackageAndImports#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genGetterAndSetters#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genDaoMethods#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#isLegalFullClassName#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="class#JdbcType#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="class#JavaType#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="method#JavaType#0;class#JavaType#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="class#MethodSignature#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="method#MethodSignature#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#getDefaultMethods#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#fromName#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/DBUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="37" column="110" selection-start-line="37" selection-start-column="110" selection-end-line="37" selection-end-column="110" />
+          <folding>
+            <element signature="method#getConnection#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#genConnectionUrl#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#getTableNames#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#getTableComments#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#parseRealTableName#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#fitSplitRule#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#parseClassComment#0;class#DBUtil#0" expanded="false" />
+            <marker date="1468484798959" expanded="true" signature="2856:2877" ph="SHOW FULL FI... " />
+            <marker date="1468484798959" expanded="false" signature="4260:4277" ph="SHOW TABLE S... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/StringUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+          <folding>
+            <element signature="method#lowerFirst#0;class#StringUtil#0" expanded="false" />
+            <element signature="method#upperFirst#0;class#StringUtil#0" expanded="false" />
+            <element signature="method#underlineToUpper#0;class#StringUtil#0" expanded="false" />
+            <element signature="method#trim#0;class#StringUtil#0" expanded="false" />
+            <element signature="method#equals#0;class#StringUtil#0" expanded="false" />
+            <element signature="method#equalsIgnoreCase#0;class#StringUtil#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/builder/XmlBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#build#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#genSelectSql#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#genMethodXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeUpdateByIdXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeInsertXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeSelectByIdsXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeSelectByIdXml#0;class#XmlBuilder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/ui/dialog/FXOptionPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="99" column="23" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="139" column="82" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -840,17 +1139,175 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/ui/css/panel.css">
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/ui/dialog/FXOptionPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="99" column="23" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="139" column="82" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/ui/dialog/FXOptionPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="99" column="23" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="139" column="82" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/JavaFileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <element signature="method#genClassComment#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genMethodComment#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genPackageAndImports#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genGetterAndSetters#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genDaoMethods#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#isLegalFullClassName#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="class#JdbcType#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="class#JavaType#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="method#JavaType#0;class#JavaType#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="class#MethodSignature#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="method#MethodSignature#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#getDefaultMethods#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#fromName#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/CollectionUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/controller/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/builder/DaoBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/builder/GeneratorBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/JavaFileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <element signature="method#genClassComment#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genMethodComment#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genPackageAndImports#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genGetterAndSetters#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genDaoMethods#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#isLegalFullClassName#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="class#JdbcType#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="class#JavaType#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="method#JavaType#0;class#JavaType#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="class#MethodSignature#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="method#MethodSignature#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#getDefaultMethods#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#fromName#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/CollectionUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/builder/DaoBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/builder/GeneratorBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/ui/css/panel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -862,13 +1319,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/fxml/config.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
@@ -878,13 +1335,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_25.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_25.xml" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1460">
@@ -928,7 +1379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -940,39 +1390,230 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/Function.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/JavaFileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/CollectionUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+        <state relative-caret-position="140">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/ConfigUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="139" column="82" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/ui/dialog/FXOptionPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="99" column="23" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/StringUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+          <folding>
+            <element signature="method#lowerFirst#0;class#StringUtil#0" expanded="false" />
+            <element signature="method#upperFirst#0;class#StringUtil#0" expanded="false" />
+            <element signature="method#underlineToUpper#0;class#StringUtil#0" expanded="false" />
+            <element signature="method#trim#0;class#StringUtil#0" expanded="false" />
+            <element signature="method#equals#0;class#StringUtil#0" expanded="false" />
+            <element signature="method#equalsIgnoreCase#0;class#StringUtil#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/JavaFileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="106" column="57" selection-start-line="106" selection-start-column="57" selection-end-line="106" selection-end-column="57" />
+          <folding>
+            <element signature="method#genClassComment#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genMethodComment#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genPackageAndImports#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genGetterAndSetters#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#genDaoMethods#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#isLegalFullClassName#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="class#JdbcType#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="class#JavaType#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="method#JavaType#0;class#JavaType#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="class#MethodSignature#0;class#JavaFileUtil#0" expanded="true" />
+            <element signature="method#MethodSignature#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#getDefaultMethods#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+            <element signature="method#fromName#0;class#MethodSignature#0;class#JavaFileUtil#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/builder/XmlBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+          <folding>
+            <element signature="method#build#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#genSelectSql#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#genMethodXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeUpdateByIdXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeInsertXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeSelectByIdsXml#0;class#XmlBuilder#0" expanded="false" />
+            <element signature="method#makeSelectByIdXml#0;class#XmlBuilder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/pojo/Column.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yp/dev/tools/util/DBUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="724">
+          <caret line="184" column="9" selection-start-line="184" selection-start-column="9" selection-end-line="184" selection-end-column="9" />
+          <folding>
+            <element signature="method#getConnection#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#genConnectionUrl#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#getTableNames#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#getTableComments#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#parseRealTableName#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#fitSplitRule#0;class#DBUtil#0" expanded="false" />
+            <element signature="method#parseClassComment#0;class#DBUtil#0" expanded="false" />
+            <marker date="1468484798959" expanded="true" signature="2856:2877" ph="SHOW FULL FI... " />
+            <marker date="1468484798959" expanded="false" signature="4260:4277" ph="SHOW TABLE S... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>mybatis.helper:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>JDK1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>mybatis.helper</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>JDK1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>mysql-connector-java-5.1.37-bin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

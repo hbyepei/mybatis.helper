@@ -94,7 +94,6 @@ public class FXOptionPane {
     }
 
     public static void showMessageDialog(Stage owner, String message, String title) {
-
         showMessageDialog(owner, new Message(message), title);
     }
 

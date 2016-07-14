@@ -171,7 +171,7 @@ public class XmlBuilder {
             sb.append("\t\t\t<if test=\"").append(field).append(" !=null\">")
                     .append(c.getName()).appendLine(",</if>");
         }
-        sb.appendLine("\t\t</trim>").appendLine("\t\t <trim prefix=\"values (\" suffix=\")\" suffixOverrides=\",\" >");
+        sb.appendLine("\t\t</trim>").appendLine("\t\tVALUES").appendLine("\t\t<trim prefix=\"(\" suffix=\")\" suffixOverrides=\",\" >");
         for (int i = 0; i < size; i++) {
             Column c = columns.get(i);
             String field = StringUtil.underlineToUpper(c.getName());
