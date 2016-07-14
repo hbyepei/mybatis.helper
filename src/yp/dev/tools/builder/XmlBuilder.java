@@ -30,7 +30,9 @@ public class XmlBuilder {
                     .appendLine("\"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">")
                     .appendLine("<mapper namespace=\"" + pojoInfo.getDaoPkg() + "." + pojoInfo.getBeanName() + pojoInfo.getDaoSuffix() + "\">")
                     .appendLine(genResultMap(table, pojoInfo))
-                    .appendLine(genSelectSql(table.getColumns()));
+                    .appendLine(genSelectSql(table.getColumns()))
+                    .appendLine(genInsertSql(table.getColumns()));
+
             for (JavaFileUtil.MethodSignature ms : methodSignatures) {
                 sb.appendLine(genMethodXml(table, ms));
             }
@@ -61,11 +63,29 @@ public class XmlBuilder {
     }
 
     private String genSelectSql(List<Column> columns) {
-        StringBuilder sb = new StringBuilder("\t<!-- 通用的SQL字段-->").appendLine().appendLine("\t<sql id=\"Base_Column_List\">")
+        StringBuilder sb = new StringBuilder("\t<!-- 通用的查询SQL字段-->").appendLine().appendLine("\t<sql id=\"All_Column_List\">")
                 .append("\t\t");
         int size = columns.size();
         for (int i = 0; i < size; i++) {
             sb.append(columns.get(i).getName());
+            if (i != size - 1) {
+                sb.append(",");
+            }
+        }
+        sb.appendLine().appendLine("\t</sql>");
+        return sb.toString();
+    }
+
+    private String genInsertSql(List<Column> columns) {
+        StringBuilder sb = new StringBuilder("\t<!-- insertSQL字段-->").appendLine().appendLine("\t<sql id=\"Insert_Column_List\">")
+                .append("\t\t");
+        int size = columns.size();
+        for (int i = 0; i < size; i++) {
+            String name=columns.get(i).getName();
+            if (StringUtil.equalsIgnoreCase(name,"id")){
+                continue;
+            }
+            sb.append(name);
             if (i != size - 1) {
                 sb.append(",");
             }
@@ -211,7 +231,7 @@ public class XmlBuilder {
         return new StringBuilder("\t<select id=\"")
                 .append(ms.getName())
                 .appendLine("\" resultMap=\"BaseResultMap\">")
-                .append("\t\t SELECT <include refid=\"Base_Column_List\"/> FROM ").appendLine(table.getName())
+                .append("\t\t SELECT <include refid=\"All_Column_List\"/> FROM ").appendLine(table.getName())
                 .appendLine("\t\t WHERE id in ")
                 .appendLine("\t\t<foreach collection=\"" + ms.getParams().getValue() + "\" index=\"index\" item=\"item\" open=\"(\" separator=\",\" close=\")\">")
                 .append("\t\t\t").appendLine("#{item}")
@@ -223,7 +243,7 @@ public class XmlBuilder {
         return new StringBuilder("\t<select id=\"")
                 .append(ms.getName())
                 .appendLine("\" resultMap=\"BaseResultMap\">")
-                .append("\t\t SELECT <include refid=\"Base_Column_List\"/> FROM ").append(table.getName())
+                .append("\t\t SELECT <include refid=\"All_Column_List\"/> FROM ").append(table.getName())
                 .append(" WHERE " + ms.getParams().getValue() + "=#{").append(ms.getParams().getValue()).appendLine("}")
                 .append("\t</select>").toString();
     }
