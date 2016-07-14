@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9f8c41b-7534-4248-a846-1a18b7605060" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_25.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mybatis.helper.iml" afterPath="$PROJECT_DIR$/mybatis.helper.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yp/dev/tools/Main.java" afterPath="$PROJECT_DIR$/src/yp/dev/tools/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yp/dev/tools/builder/XmlBuilder.java" afterPath="$PROJECT_DIR$/src/yp/dev/tools/builder/XmlBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yp/dev/tools/ui/dialog/FXOptionPane.java" afterPath="$PROJECT_DIR$/src/yp/dev/tools/ui/dialog/FXOptionPane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yp/dev/tools/util/DBUtil.java" afterPath="$PROJECT_DIR$/src/yp/dev/tools/util/DBUtil.java" />
     </list>
     <ignored path="mybatis.helper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -906,7 +898,7 @@
       <workItem from="1468394782749" duration="429000" />
       <workItem from="1468417892786" duration="158000" />
       <workItem from="1468424378315" duration="39000" />
-      <workItem from="1468484617458" duration="198000" />
+      <workItem from="1468484617458" duration="210000" />
     </task>
     <task id="LOCAL-00001" summary="Mybatis辅助工具">
       <created>1465669150927</created>
@@ -943,11 +935,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465810249143</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="降低JDK api">
+      <created>1468484823650</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1468484823650</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5309000" />
+    <option name="totallyTimeSpent" value="5321000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
