@@ -51,10 +51,10 @@ public class XmlBuilder {
             String fieldName = StringUtil.underlineToUpper(dbColumnName);
             String jdbcType = c.getJdbcType();
             if ("id".equals(c.getName())) {
-                sb.appendLine("\t\t<id column=\"id\" property=\"id\" jdbcType=\"BIGINT\" />");
+                sb.appendLine("\t\t<id column=\"id\" property=\"id\"/>");
                 continue;
             }
-            sb.appendLine("\t\t<result column=\"" + dbColumnName + "\" property=\"" + fieldName + "\" jdbcType=\"" + jdbcType + "\" />");
+            sb.appendLine("\t\t<result column=\"" + dbColumnName + "\" property=\"" + fieldName + "\" />");
         }
         sb.appendLine("\t</resultMap>");
         return sb.toString();

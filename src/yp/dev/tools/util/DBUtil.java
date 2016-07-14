@@ -183,6 +183,9 @@ public class DBUtil {
         if(StringUtil.equalsIgnoreCase(type,"datetime")){
             type="TIMESTAMP";
         }
+        if(StringUtil.equalsIgnoreCase(type,"int")){
+            type="INTEGER";
+        }
         return type.toUpperCase();
     }
 }

@@ -182,7 +182,7 @@ public class JavaFileUtil {
         _varchar("VARCHAR"),
         _date("DATE"),
         _timeStamp("TIMESTAMP"),
-        _int("INT"),
+        _int("INTEGER"),
         _bigint("BIGINT"),
         _text("TEXT"),
         _bit("BIT"),
