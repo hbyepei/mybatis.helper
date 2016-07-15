@@ -13,3 +13,6 @@ hs_err_pid*
 .idea/
 lib/
 out/
+module_mybatis.helper.xml
+mybatis.helper.properties
+mybatis.helper.xml
