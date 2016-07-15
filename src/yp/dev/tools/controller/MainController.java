@@ -187,6 +187,7 @@ public class MainController {
         conf.setUsername(StringUtil.trim(dbUser));
         conf.setPassword(StringUtil.trim(dbPwd));
         conf.setDatabase(StringUtil.trim(dbName));
+        conf.setTabels(StringUtil.trim(dbTable));
 
         conf.setDaoAnnotations(Config.transformStrings(daoAnnos));
         conf.setDaoPackage(StringUtil.trim(daoPackage));
@@ -312,6 +313,7 @@ public class MainController {
         this.username.setText(conf.getUsername());
         this.password.setText(conf.getPassword());
         this.database.setText(conf.getDatabase());
+        this.tabels.setText(conf.getTabels());
         this.daoSuffix.setText(conf.getDaoSuffix());
         this.daoPkg.setText(conf.getDaoPackage());
         this.daoAnnotations.setText(conf.getDaoAnnotations());

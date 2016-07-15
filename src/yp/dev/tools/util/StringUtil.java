@@ -1,6 +1,4 @@
 package yp.dev.tools.util;
-import yp.dev.tools.builder.StringBuilder;
-
 /**
  * Created by yp on 2016/6/9.
  */
@@ -57,7 +55,7 @@ public class StringUtil {
             return str;
         }
         String[] splits = str.toLowerCase().split("_");
-        StringBuilder sb = new StringBuilder();
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
         for (String s : splits) {
             sb.append(upperFirst(s));
         }

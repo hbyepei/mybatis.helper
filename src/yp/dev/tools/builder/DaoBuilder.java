@@ -46,7 +46,7 @@ public class DaoBuilder {
                 }
             }
 
-            StringBuilder sb = new StringBuilder()
+            StrBuilder sb = new StrBuilder()
                     .appendLine("package " + daoPkg + ";")
                     .append("import " + pi.getBeanPkg() + "." + pi.getBeanName()).appendLine(";")
                     .append(daoAnnoImport)

@@ -16,3 +16,5 @@ out/
 module_mybatis.helper.xml
 mybatis.helper.properties
 mybatis.helper.xml
+/.idea/
+/MybatisHelper.iml

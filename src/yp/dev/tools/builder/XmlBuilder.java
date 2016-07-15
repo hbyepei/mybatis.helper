@@ -24,7 +24,7 @@ public class XmlBuilder {
         try {
             IOUtil.createDir(this.xmlFilePath);
             File xmlFile = new File(xmlFilePath, pojoInfo.getBeanName() + pojoInfo.getDaoSuffix() + ".xml");
-            StringBuilder sb = new StringBuilder()
+            StrBuilder sb = new StrBuilder()
                     .appendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
                     .append("<!DOCTYPE mapper PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\" ")
                     .appendLine("\"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">")
@@ -46,7 +46,7 @@ public class XmlBuilder {
     }
 
     private String genResultMap(Table table, PojoInfo pojoInfo) {
-        StringBuilder sb = new StringBuilder("\t<!-- ResultMap定义-->").appendLine()
+        StrBuilder sb = new StrBuilder("\t<!-- ResultMap定义-->").appendLine()
                 .appendLine("\t<resultMap id=\"BaseResultMap\" type=\"" + pojoInfo.getBeanPkg() + "." + pojoInfo.getBeanName() + pojoInfo.getBeanSuffix() + "\" >");
         for (Column c : table.getColumns()) {
             String dbColumnName = c.getName();
@@ -63,7 +63,7 @@ public class XmlBuilder {
     }
 
     private String genSelectSql(List<Column> columns) {
-        StringBuilder sb = new StringBuilder("\t<!-- 通用的查询SQL字段-->").appendLine().appendLine("\t<sql id=\"All_Column_List\">")
+        StrBuilder sb = new StrBuilder("\t<!-- 通用的查询SQL字段-->").appendLine().appendLine("\t<sql id=\"All_Column_List\">")
                 .append("\t\t");
         int size = columns.size();
         for (int i = 0; i < size; i++) {
@@ -71,13 +71,16 @@ public class XmlBuilder {
             if (i != size - 1) {
                 sb.append(",");
             }
+            if (i>0 && i % 10 ==0){
+                sb.appendLine().append("\t\t");
+            }
         }
         sb.appendLine().appendLine("\t</sql>");
         return sb.toString();
     }
 
     private String genInsertSql(List<Column> columns) {
-        StringBuilder sb = new StringBuilder("\t<!-- insertSQL字段-->").appendLine().appendLine("\t<sql id=\"Insert_Column_List\">")
+        StrBuilder sb = new StrBuilder("\t<!-- insertSQL字段-->").appendLine().appendLine("\t<sql id=\"Insert_Column_List\">")
                 .append("\t\t");
         int size = columns.size();
         for (int i = 0; i < size; i++) {
@@ -89,13 +92,16 @@ public class XmlBuilder {
             if (i != size - 1) {
                 sb.append(",");
             }
+            if (i>0 && i % 10 ==0){
+                sb.appendLine().append("\t\t");
+            }
         }
         sb.appendLine().appendLine("\t</sql>");
         return sb.toString();
     }
 
     private String genMethodXml(Table table, JavaFileUtil.MethodSignature ms) {
-        StringBuilder sb = new StringBuilder("\t<!--" + ms.getComment() + "-->").appendLine();
+        StrBuilder sb = new StrBuilder("\t<!--" + ms.getComment() + "-->").appendLine();
         String methodXml = "";
         switch (ms) {
             case selectById:
@@ -127,7 +133,7 @@ public class XmlBuilder {
     }
 
     private String makeDeleteByIdsXml(Table table, JavaFileUtil.MethodSignature ms) {
-        return new StringBuilder("\t<delete id=\"").append(ms.getName()).appendLine("\">")
+        return new StrBuilder("\t<delete id=\"").append(ms.getName()).appendLine("\">")
                 .append("\t\tDELETE FROM ").append(table.getName()).appendLine(" WHERE id in ")
                 .appendLine("\t\t\t<foreach collection=\"" + ms.getParams().getValue() + "\" index=\"index\" item=\"item\" open=\"(\" separator=\",\" close=\")\">")
                 .append("\t\t\t\t").appendLine("#{item}")
@@ -136,14 +142,14 @@ public class XmlBuilder {
     }
 
     private String makeDeleteByIdXml(Table table, JavaFileUtil.MethodSignature ms) {
-        return new StringBuilder("\t<delete id=\"").append(ms.getName()).appendLine("\">")
+        return new StrBuilder("\t<delete id=\"").append(ms.getName()).appendLine("\">")
                 .append("\t\tDELETE FROM ").append(table.getName())
                 .append(" WHERE ").append(ms.getParams().getValue()).append(" =#{").append(ms.getParams().getValue()).appendLine("}")
                 .append("\t</delete>").toString();
     }
 
     private String makeUpdateSelectiveByIdXml(Table table, JavaFileUtil.MethodSignature ms) {
-        StringBuilder sb = new StringBuilder("\t<update id=\"").append(ms.getName()).appendLine("\">")
+        StrBuilder sb = new StrBuilder("\t<update id=\"").append(ms.getName()).appendLine("\">")
                 .append("\t\tUPDATE ").appendLine(table.getName())
                 .appendLine("\t\t<set> ");
         List<Column> columns = table.getColumns();
@@ -161,7 +167,7 @@ public class XmlBuilder {
     }
 
     private String makeUpdateByIdXml(Table table, JavaFileUtil.MethodSignature ms) {
-        StringBuilder sb = new StringBuilder("\t<update id=\"").append(ms.getName()).appendLine("\">")
+        StrBuilder sb = new StrBuilder("\t<update id=\"").append(ms.getName()).appendLine("\">")
                 .append("\t\tUPDATE ").append(table.getName()).appendLine(" SET ");
         List<Column> columns = table.getColumns();
         int size = columns.size();
@@ -179,7 +185,7 @@ public class XmlBuilder {
     }
 
     private String makeInsertSelectiveXml(Table table, JavaFileUtil.MethodSignature ms) {
-        StringBuilder sb = new StringBuilder("\t<insert id=\"").append(ms.getName()).appendLine("\">")
+        StrBuilder sb = new StrBuilder("\t<insert id=\"").append(ms.getName()).appendLine("\">")
                 .append("\t\tINSERT INTO ").appendLine(table.getName())
                 .appendLine("\t\t<trim prefix=\"(\" suffix=\")\" suffixOverrides=\",\" >");
 
@@ -188,23 +194,23 @@ public class XmlBuilder {
         for (int i = 0; i < size; i++) {
             Column c = columns.get(i);
             String field = StringUtil.underlineToUpper(c.getName());
-            sb.append("\t\t\t<if test=\"").append(field).append(" !=null\">")
+            sb.append("\t\t\t<if test=\"").append(ms.getParams().getValue()).append(".").append(field).append(" !=null\">")
                     .append(c.getName()).appendLine(",</if>");
         }
         sb.appendLine("\t\t</trim>").appendLine("\t\tVALUES").appendLine("\t\t<trim prefix=\"(\" suffix=\")\" suffixOverrides=\",\" >");
         for (int i = 0; i < size; i++) {
             Column c = columns.get(i);
             String field = StringUtil.underlineToUpper(c.getName());
-            sb.append("\t\t\t<if test=\"" + field + " !=null\">")
-                    .append("#{").append(StringUtil.underlineToUpper(c.getName())).appendLine("},</if>");
+            sb.append("\t\t\t<if test=\"").append(ms.getParams().getValue()).append(".").append(field).append(" !=null\">")
+                    .append("#{").append(ms.getParams().getValue()).append(".").append(StringUtil.underlineToUpper(c.getName())).appendLine("},</if>");
         }
         sb.appendLine("\t\t</trim>").append("\t</insert>");
         return sb.toString();
     }
 
     private String makeInsertXml(Table table, JavaFileUtil.MethodSignature ms) {
-        StringBuilder sb = new StringBuilder("\t<insert id=\"").append(ms.getName()).appendLine("\">")
-                .append("\t\t INSERT INTO ").append(table.getName()).appendLine("(")
+        StrBuilder sb = new StrBuilder("\t<insert id=\"").append(ms.getName()).appendLine("\">")
+                .append("\t\tINSERT INTO ").append(table.getName()).appendLine("(")
                 .append("\t\t\t");
         List<Column> columns = table.getColumns();
         int size = columns.size();
@@ -214,13 +220,16 @@ public class XmlBuilder {
             if (i != size - 1) {
                 sb.append(",");
             }
+            if (i>0 && i % 10 ==0){
+                sb.appendLine().append("\t\t\t");
+            }
         }
-        sb.appendLine().appendLine("\t\t)  VALUES (")
+        sb.appendLine().appendLine("\t\t) VALUES (")
         .append("\t\t\t");
         for (int i = 0; i < size; i++) {
-            sb.append("#{").append(ms.getParams().getValue()).append(".").append(StringUtil.underlineToUpper(columns.get(i).getName())).append("}");
+            sb.append("#{").append(ms.getParams().getValue()).append(".").append(ms.getParams().getValue()).append(".").append(StringUtil.underlineToUpper(columns.get(i).getName())).append("}");
             if (i != size - 1) {
-                sb.append(",");
+                sb.appendLine(",").append("\t\t\t");
             }
         }
         sb.appendLine().appendLine("\t\t)").append("\t</insert>");
@@ -228,7 +237,7 @@ public class XmlBuilder {
     }
 
     private String makeSelectByIdsXml(Table table, JavaFileUtil.MethodSignature ms) {
-        return new StringBuilder("\t<select id=\"")
+        return new StrBuilder("\t<select id=\"")
                 .append(ms.getName())
                 .appendLine("\" resultMap=\"BaseResultMap\">")
                 .append("\t\t SELECT <include refid=\"All_Column_List\"/> FROM ").appendLine(table.getName())
@@ -240,7 +249,7 @@ public class XmlBuilder {
     }
 
     private String makeSelectByIdXml(Table table, JavaFileUtil.MethodSignature ms) {
-        return new StringBuilder("\t<select id=\"")
+        return new StrBuilder("\t<select id=\"")
                 .append(ms.getName())
                 .appendLine("\" resultMap=\"BaseResultMap\">")
                 .append("\t\t SELECT <include refid=\"All_Column_List\"/> FROM ").append(table.getName())

@@ -1,6 +1,6 @@
 package yp.dev.tools.util;
 import javafx.util.Pair;
-import yp.dev.tools.builder.StringBuilder;
+import yp.dev.tools.builder.StrBuilder;
 import yp.dev.tools.pojo.Column;
 import yp.dev.tools.pojo.PojoInfo;
 
@@ -25,7 +25,7 @@ public class JavaFileUtil {
         if (description == null) {
             description = "";
         }
-        StringBuilder sb = new StringBuilder().appendLine()
+        StrBuilder sb = new StrBuilder().appendLine()
                 .appendLine("/**")
                 .appendLine(" * ")
                 .append(" * date : ").appendLine(df.format(date))
@@ -40,7 +40,7 @@ public class JavaFileUtil {
         if (description == null) {
             description = "";
         }
-        StringBuilder sb = new StringBuilder().appendLine()
+        StrBuilder sb = new StrBuilder().appendLine()
                 .appendLine("\t/**")
                 .append("\t * ").appendLine(description)
                 .appendLine("\t **/");
@@ -59,7 +59,7 @@ public class JavaFileUtil {
                 }
             }
         }
-        StringBuilder sb = new StringBuilder("package ").append(pkgName).appendLine(";")
+        StrBuilder sb = new StrBuilder("package ").append(pkgName).appendLine(";")
                 .appendLine("import java.io.Serializable;")
                 .append(annotationImport);
 
@@ -105,7 +105,7 @@ public class JavaFileUtil {
     }
 
     public static String genFields(List<Column> columns) {
-        StringBuilder sb = new StringBuilder().appendLine();
+        StrBuilder sb = new StrBuilder().appendLine();
         if (CollectionUtil.isEmpty(columns)) {
             return sb.toString();
         }
@@ -123,7 +123,7 @@ public class JavaFileUtil {
 
     public static String genGetterAndSetters(List<Column> columns) {
         // 生成get 和 set方法
-        StringBuilder sb = new StringBuilder().appendLine();
+        StrBuilder sb = new StrBuilder().appendLine();
         if (CollectionUtil.isEmpty(columns)) {
             return sb.toString();
         }
@@ -145,7 +145,7 @@ public class JavaFileUtil {
 
     public static String genDaoMethods(PojoInfo pi, List<MethodSignature> methodSignatures) {
         // ----------定义Mapper中的方法Begin----------
-        StringBuilder sb = new StringBuilder();
+        StrBuilder sb = new StrBuilder();
         if (CollectionUtil.isEmpty(methodSignatures)) {
             return sb.toString();
         }

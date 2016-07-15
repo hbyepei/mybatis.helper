@@ -48,7 +48,7 @@ public class PojoBuilder {
             IOUtil.createDir(this.filePath);
             File beanFile = new File(this.filePath, beanName + pojoSuffix + ".java");
             bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(beanFile), "UTF-8"));
-            StringBuilder sb = new StringBuilder()
+            StrBuilder sb = new StrBuilder()
                     .appendLine(JavaFileUtil.genPackageAndImports(pkgName, pojoAnnotations, columns))//包声明及导入声明
                     .appendLine(JavaFileUtil.genClassComment(new Date(), null, comment))//类注释
 //                    .appendLine("@SuppressWarnings(\"serial\")")//No serial警告压制

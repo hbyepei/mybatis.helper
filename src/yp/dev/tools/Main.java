@@ -25,7 +25,7 @@ public class Main extends Application {
             primaryStage.setTitle("Mybatis辅助工具(作者:叶佩)");
             Image image = null;
             try {
-                image = new Image("/yp/dev/tools/ui/image/icon.png");
+                image = new Image("/image/icon.png");
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -60,7 +60,7 @@ public class FXOptionPane {
                                              String title) {
         VBox vb = new VBox();
         Scene scene = new Scene(vb);
-        final Dialog dial = new Dialog(title, owner, scene, "/yp/dev/tools/ui/image/ok.png");
+        final Dialog dial = new Dialog(title, owner, scene, "/image/ok.png");
         vb.setPadding(new Insets(15, 10, 15, 10));
         vb.setSpacing(10);
         Button yesButton = new Button("确  定");
@@ -101,7 +101,7 @@ public class FXOptionPane {
         VBox vb = new VBox();
         try {
             Scene scene = new Scene(vb);
-            final Dialog dial = new Dialog(title, owner, scene, "/yp/dev/tools/ui/image/info.png");
+            final Dialog dial = new Dialog(title, owner, scene, "/image/info.png");
             vb.setPadding(new Insets(15, 10, 15, 10));
             vb.setSpacing(10);
             Button okButton = new Button("确 定");

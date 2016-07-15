@@ -23,6 +23,7 @@ public class Config {
     private String pojoAnnotations;
     private String targetDirectory;
     private String methods;
+    private String tabels;
 
     public String getIp() {
         return ip;
@@ -126,6 +127,14 @@ public class Config {
 
     public void setMethods(String methods) {
         this.methods = methods;
+    }
+
+    public String getTabels() {
+        return tabels;
+    }
+
+    public void setTabels(String tabels) {
+        this.tabels = tabels;
     }
 
     public static String transformStrings(String daoAnnos) {
