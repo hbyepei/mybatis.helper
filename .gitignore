@@ -1,7 +1,40 @@
-# Created by .ignore support plugin (hsz.mobi)
+# kdiff3 ignore
+*.orig
 
-# IntelliJ project files
+# maven ignore
+target/
+
+# java ignore
+out/
+
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+
+# idea ignore
+catalina.base_IS_UNDEFINED/
 .idea/
+*.ipr
 *.iml
-*.jar
-/out
+*.iws
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+MANIFEST.MF
+
+# package ignore (optional)
+# *.jar
+# *.war
+# *.zip
+# *.tar
+# *.tar.gz
