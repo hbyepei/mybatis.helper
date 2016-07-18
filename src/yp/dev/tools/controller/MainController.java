@@ -204,7 +204,7 @@ public class MainController {
         doGenerate(conf, dbTable);
         try {
             IOUtil.openDir(targetDirectory);
-            cancel(actionEvent);
+//            cancel(actionEvent);
         } catch (IOException e) {
             e.printStackTrace();
         }
