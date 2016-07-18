@@ -6,6 +6,7 @@ target/
 
 # java ignore
 out/
+lib/
 
 
 # eclipse ignore
@@ -38,3 +39,4 @@ MANIFEST.MF
 # *.zip
 # *.tar
 # *.tar.gz
+/.idea/
