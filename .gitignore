@@ -1,20 +1,7 @@
-*.class
+# Created by .ignore support plugin (hsz.mobi)
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-#*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# IntelliJ project files
 .idea/
-lib/
-out/
-module_mybatis.helper.xml
-mybatis.helper.properties
-mybatis.helper.xml
-/.idea/
-/MybatisHelper.iml
+*.iml
+*.jar
+/out

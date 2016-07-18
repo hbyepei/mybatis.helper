@@ -55,7 +55,7 @@ public class StringUtil {
             return str;
         }
         String[] splits = str.toLowerCase().split("_");
-        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (String s : splits) {
             sb.append(upperFirst(s));
         }

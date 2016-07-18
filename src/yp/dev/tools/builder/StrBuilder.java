@@ -4,18 +4,18 @@ package yp.dev.tools.builder;
  */
 public class StrBuilder {
     private final static String lineSep = System.lineSeparator();
-    private java.lang.StringBuilder sb;
+    private StringBuilder sb;
 
     public StrBuilder() {
-        this.sb = new java.lang.StringBuilder();
+        this.sb = new StringBuilder();
     }
 
     public StrBuilder(String str) {
-        this.sb = new java.lang.StringBuilder(str);
+        this.sb = new StringBuilder(str);
     }
 
     public StrBuilder(int size) {
-        this.sb = new java.lang.StringBuilder(size);
+        this.sb = new StringBuilder(size);
     }
 
     public StrBuilder append(String str) {
