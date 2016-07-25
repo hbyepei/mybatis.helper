@@ -97,8 +97,6 @@ public class DBUtil {
                 t.setColumns(columns);
                 result.add(t);
             }
-        } catch (SQLException e) {
-            throw e;
         } finally {
             IOUtil.close(rs, ps);
         }
@@ -129,8 +127,6 @@ public class DBUtil {
                 String comment = results.getString("COMMENT");
                 maps.put(tableName, comment);
             }
-        } catch (SQLException e) {
-            throw e;
         } finally {
             IOUtil.close(results, pstate);
         }

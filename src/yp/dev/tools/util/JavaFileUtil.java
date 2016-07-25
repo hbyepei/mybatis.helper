@@ -82,24 +82,26 @@ public class JavaFileUtil {
     }
 
     public static JavaType jdbcType2JavaType(String type) {
-        if (type.contains(JdbcType._char.name) || type.contains(JdbcType._varchar.name)) {
+        if (type.contains(JdbcType._char.name) || type.contains(JdbcType._varchar.name) || type.contains(JdbcType._longVarchar.name) || type.contains(JdbcType._text.name) || type.contains(JdbcType._clob.name)) {
             return JavaType._String;
         } else if (type.contains(JdbcType._bigint.name)) {
             return JavaType._Long;
-        } else if (type.contains(JdbcType._int.name)) {
+        } else if (type.contains(JdbcType._int.name)){
             return JavaType._Integer;
-        } else if (type.contains(JdbcType._date.name)) {
+        }else if(type.contains(JdbcType._tinyInt.name) || type.contains(JdbcType._smallInt.name)){
+            return JavaType._int;
+        } else if (type.contains(JdbcType._date.name) || type.contains(JdbcType._timeStamp.name) || type.contains(JdbcType._time.name)) {
             return JavaType._Date;
-        } else if (type.contains(JdbcType._text.name)) {
-            return JavaType._String;
-        } else if (type.contains(JdbcType._timeStamp.name)) {
-            return JavaType._Date;
-        } else if (type.contains(JdbcType._bit.name)) {
+        } else if (type.contains(JdbcType._bit.name) || type.contains(JdbcType._boolean.name)) {
             return JavaType._Boolean;
         } else if (type.contains(JdbcType._decimal.name)) {
             return JavaType._BigDecimal;
         } else if (type.contains(JdbcType._blob.name)) {
             return JavaType._byteArr;
+        }else if (type.contains(JdbcType._double.name)){
+            return JavaType._Double;
+        }else if(type.contains(JdbcType._float.name)){
+            return JavaType._Float;
         }
         return JavaType.unknown;
     }
@@ -180,13 +182,21 @@ public class JavaFileUtil {
     public enum JdbcType {
         _char("CHAR"),
         _varchar("VARCHAR"),
+        _longVarchar("LONGVARCHAR"),
         _date("DATE"),
+        _time("TIME"),
         _timeStamp("TIMESTAMP"),
+        _boolean("BOOLEAN"),
+        _bit("BIT"),
+        _tinyInt("TINYINT"),
+        _smallInt("SMALLINT"),
         _int("INTEGER"),
         _bigint("BIGINT"),
-        _text("TEXT"),
-        _bit("BIT"),
         _decimal("DECIMAL"),
+        _double("DOUBLE"),
+        _float("FLOAT"),
+        _text("TEXT"),
+        _clob("CLOB"),
         _blob("BLOB"),
         unknown("UNKNOWN");
         private String name;
@@ -204,10 +214,13 @@ public class JavaFileUtil {
         _String("String", "java.long.String"),
         _Long("Long", "java.long.Long"),
         _Integer("Integer", "java.long.Integer"),
+        _Double("Double","java.long.Double"),
+        _Float("Float","java.long.Float"),
         _Date("Date", "java.util.Date"),
         _BigDecimal("BigDecimal", "java.math.BigDecimal"),
         _Boolean("Boolean", "java.long.Boolean"),
         _byteArr("byte[]", ""),
+        _int("int", ""),
         unknown("String", "java.long.String");
         private String name;
         private String pkg;
