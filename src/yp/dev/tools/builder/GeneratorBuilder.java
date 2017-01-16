@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.List;
 
-import static yp.dev.tools.util.DBUtil.parseRealTableName;
+import static yp.dev.tools.util.DBUtil.parseNaturalTableName;
 
 /**
  * Created by yp on 2016/6/9.
@@ -57,7 +57,7 @@ public class GeneratorBuilder {
             if (CollectionUtil.isEmpty(table.getColumns())) {
                 continue;
             }
-            pojoInfo.setBeanName(StringUtil.upperFirst(StringUtil.underlineToUpper(parseRealTableName(table.getName()))));
+            pojoInfo.setBeanName(StringUtil.upperFirst(StringUtil.underlineToUpper(parseNaturalTableName(table.getNaturalName()))));
             new PojoBuilder(pojoPkg, pojoSuffix, pojoFilePath).build(table, pojoAnnotations);
             new DaoBuilder(daoPkg, daoSuffix, daoFilePath).build(pojoInfo, daoAnnotations, methodSignatures);
             new XmlBuilder(xmlFilePath).build(pojoInfo, table, methodSignatures);
@@ -93,7 +93,7 @@ public class GeneratorBuilder {
         return this;
     }
 
-    public GeneratorBuilder setPojoFilePath(String pojoFilePath) {
+    private GeneratorBuilder setPojoFilePath(String pojoFilePath) {
         this.pojoFilePath = pojoFilePath;
         IOUtil.createDir(pojoFilePath);
         return this;
@@ -109,13 +109,13 @@ public class GeneratorBuilder {
         return this;
     }
 
-    public GeneratorBuilder setDaoFilePath(String daoFilePath) {
+    private GeneratorBuilder setDaoFilePath(String daoFilePath) {
         this.daoFilePath = daoFilePath;
         IOUtil.createDir(daoFilePath);
         return this;
     }
 
-    public GeneratorBuilder setXmlFilePath(String xmlFilePath) {
+    private GeneratorBuilder setXmlFilePath(String xmlFilePath) {
         this.xmlFilePath = xmlFilePath;
         IOUtil.createDir(xmlFilePath);
         return this;

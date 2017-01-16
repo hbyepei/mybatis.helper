@@ -30,14 +30,13 @@ public class DBUtil {
     }
 
     /**
-     * 获取所有的表名，分表的只取第一个表名
+     * 获取所有的表名
      *
      * @return
      * @throws SQLException
      */
     public static List<String> getTableNames(Connection conn, List<String> choosenTables) throws SQLException {
         List<String> names = new ArrayList<>();
-        List<String> realNames = new ArrayList<String>();
         PreparedStatement pstate = null;
         ResultSet results = null;
         try {
@@ -45,22 +44,14 @@ public class DBUtil {
             results = pstate.executeQuery();
             while (results.next()) {
                 String tableName = results.getString(1);
-                String realName = parseRealTableName(tableName);
-                if (realNames.contains(realName)) {//遇到了其它分表
-                    continue;
-                }
-                realNames.add(realName);
-                //如果是指定了表名，则看看遍历到的表名是不是指定的表名(注意分表问题)
                 if (choosenTables != null && choosenTables.size() > 0) {
-                    if (choosenTables.contains(realName)) {
+                    if (choosenTables.contains(tableName) || choosenTables.contains(parseNaturalTableName(tableName))) {
                         names.add(tableName);
                     }
-                } else {//对所有表生成
+                } else {
                     names.add(tableName);
                 }
             }
-        } catch (SQLException e) {
-            throw e;
         } finally {
             IOUtil.close(results, pstate);
         }
@@ -74,16 +65,22 @@ public class DBUtil {
         if (CollectionUtil.isEmpty(tableNames)) {
             return result;
         }
+        List<String> processedNaturalNames = new ArrayList<>();
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
             String prefix = "SHOW FULL FIELDS FROM ";
             for (String name : tableNames) {
+                String naturalName = parseNaturalTableName(name);
+                if (processedNaturalNames.contains(naturalName)) {
+                    continue;
+                }
                 ps = conn.prepareStatement(prefix + name);
                 rs = ps.executeQuery();
                 Table t = new Table();
-                t.setName(name);
-                t.setComment(tableComments.get(name));
+                t.setRealName(name);
+                t.setNaturalName(naturalName);
+                t.setComment(tableComments.get(naturalName));
 
                 List<Column> columns = new ArrayList<>();
                 while (rs.next()) {
@@ -95,6 +92,7 @@ public class DBUtil {
                     columns.add(c);
                 }
                 t.setColumns(columns);
+                processedNaturalNames.add(naturalName);
                 result.add(t);
             }
         } finally {
@@ -116,14 +114,14 @@ public class DBUtil {
         try {
             pstate = conn.prepareStatement("SHOW TABLE STATUS");
             results = pstate.executeQuery();
-            List<String> realNames = new ArrayList<String>();
+            List<String> naturalNames = new ArrayList<String>();
             while (results.next()) {
                 String tableName = results.getString("NAME");
-                String realName = parseRealTableName(tableName);
-                if (realNames.contains(realName)) {
+                String realName = parseNaturalTableName(tableName);
+                if (naturalNames.contains(realName)) {
                     continue;
                 }
-                realNames.add(realName);
+                naturalNames.add(realName);
                 String comment = results.getString("COMMENT");
                 maps.put(tableName, comment);
             }
@@ -139,7 +137,7 @@ public class DBUtil {
      * @param tableName
      * @return
      */
-    public static String parseRealTableName(String tableName) {
+    public static String parseNaturalTableName(String tableName) {
         if (fitSplitRule(tableName)) {
             return tableName.substring(0, tableName.lastIndexOf(splitTableSuffixSplliter));
         }
@@ -176,11 +174,11 @@ public class DBUtil {
         if (type.indexOf(" ") > 0) {
             type = type.substring(0, type.indexOf(" "));
         }
-        if(StringUtil.equalsIgnoreCase(type,"datetime")){
-            type="TIMESTAMP";
+        if (StringUtil.equalsIgnoreCase(type, "datetime")) {
+            type = "TIMESTAMP";
         }
-        if(StringUtil.equalsIgnoreCase(type,"int")){
-            type="INTEGER";
+        if (StringUtil.equalsIgnoreCase(type, "int")) {
+            type = "INTEGER";
         }
         return type.toUpperCase();
     }

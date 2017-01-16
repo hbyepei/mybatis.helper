@@ -412,15 +412,17 @@ public class MainController {
             if (!StringUtil.isBlank(dbTable)) {
                 String[] dbtables = dbTable.split(",");
                 if (dbtables.length < 1) {
-                    return Validator.fail("无效的表名");
+                    return Validator.fail("无效的表名:" + dbTable);
                 }
                 for (String s : dbtables) {
                     boolean found = false;
                     String n = s.trim();
                     for (String name : tableNames) {
-                        if (name.equalsIgnoreCase(n) || DBUtil.parseRealTableName(name).equalsIgnoreCase(n)
-                                || DBUtil.parseRealTableName(n).equalsIgnoreCase(name) ||
-                                DBUtil.parseRealTableName(name).equalsIgnoreCase(DBUtil.parseRealTableName(n))) {
+                        String chosedNaturalName = DBUtil.parseNaturalTableName(n);
+                        String dbsNaturalName = DBUtil.parseNaturalTableName(name);
+                        if (name.equalsIgnoreCase(n) || dbsNaturalName.equalsIgnoreCase(n)
+                                || chosedNaturalName.equalsIgnoreCase(name) ||
+                                dbsNaturalName.equalsIgnoreCase(chosedNaturalName)) {
                             found = true;
                             break;
                         }

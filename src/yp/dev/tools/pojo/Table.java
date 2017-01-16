@@ -7,16 +7,25 @@ import java.util.List;
  */
 public class Table implements Serializable{
     private static final long serialVersionUID = -8939471885499849096L;
-    private String name;
+    private String naturalName;
+    private String realName;
     private String comment;
     private List<Column> columns;
 
-    public String getName() {
-        return name;
+    public String getNaturalName() {
+        return naturalName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNaturalName(String naturalName) {
+        this.naturalName = naturalName;
+    }
+
+    public String getRealName() {
+        return realName;
+    }
+
+    public void setRealName(String realName) {
+        this.realName = realName;
     }
 
     public String getComment() {

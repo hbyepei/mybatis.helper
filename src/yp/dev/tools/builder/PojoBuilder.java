@@ -36,7 +36,7 @@ public class PojoBuilder {
         String comment = table.getComment();
         List<Column> columns = table.getColumns();
 
-        String beanName = StringUtil.upperFirst(StringUtil.underlineToUpper(DBUtil.parseRealTableName(table.getName())));
+        String beanName = StringUtil.upperFirst(StringUtil.underlineToUpper(DBUtil.parseNaturalTableName(table.getNaturalName())));
         BufferedWriter bw = null;
         String anno = "";
         if (!CollectionUtil.isEmpty(pojoAnnotations)) {
