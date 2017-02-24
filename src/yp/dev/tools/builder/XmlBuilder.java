@@ -156,7 +156,11 @@ public class XmlBuilder {
         List<Column> columns = table.getColumns();
         int size = columns.size();
         for (Column c : columns) {
-            String field = StringUtil.underlineToUpper(c.getName());
+            String columnName = c.getName();
+            if (StringUtil.equalsIgnoreCase(columnName, "id")) {
+                continue;
+            }
+            String field = StringUtil.underlineToUpper(columnName);
             sb.append("\t\t\t<if test=\"pojo.").append(field).append(" != null\">")
                     .append(c.getName()).append(" = #{").append(ms.getParams().getValue()).append(".").append(field).appendLine("},</if>");
         }
@@ -173,7 +177,11 @@ public class XmlBuilder {
         int size = columns.size();
         for (int i = 0; i < size; i++) {
             Column c = columns.get(i);
-            String field = StringUtil.underlineToUpper(c.getName());
+            String columnName = c.getName();
+            if (StringUtil.equalsIgnoreCase(columnName, "id")) {
+                continue;
+            }
+            String field = StringUtil.underlineToUpper(columnName);
             sb.append("\t\t\t").append(c.getName()).append(" = #{pojo.").append(field).append("}");
             if (i != size - 1) {
                 sb.appendLine(",");
