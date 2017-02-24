@@ -240,7 +240,7 @@ public class XmlBuilder {
             if (StringUtil.equalsIgnoreCase(columns.get(i).getName(), "id") && !isSplitTable) {
                 continue;
             }
-            sb.append("#{").append(ms.getParams().getValue()).append(".").append(ms.getParams().getValue()).append(".").append(StringUtil.underlineToUpper(columns.get(i).getName())).append("}");
+            sb.append("#{").append(ms.getParams().getValue()).append(".").append(StringUtil.underlineToUpper(columns.get(i).getName())).append("}");
             if (i != size - 1) {
                 sb.appendLine(",").append("\t\t\t");
             }
