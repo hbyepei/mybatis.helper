@@ -1,49 +1,43 @@
 package yp.dev.tools;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.stage.Stage;
-import yp.dev.tools.controller.MainController;
-import yp.dev.tools.ui.dialog.FXOptionPane;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.project.Project;
+
+import java.util.concurrent.CountDownLatch;
 
 /**
- * Created by yp on 2016/6/9.
+ * Author:yepei@meituan.com
+ * Date:2017/5/27
+ * Time:12:25
+ * ------------------------------------
+ * Desc:
  */
-public class Main extends Application {
-    private Stage mainStage;
-
+public class Main extends AnAction {
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void actionPerformed(AnActionEvent event) {
+        Project project = event.getData(PlatformDataKeys.PROJECT);
+        final String[] args = new String[]{};
+        final ClassLoader loader = JavaFxBootStrap.class.getClassLoader();
+        final CountDownLatch latch = new CountDownLatch(1);
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    Thread.currentThread().setContextClassLoader(loader);
+                    JavaFxBootStrap.main(args);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    latch.countDown();
+                }
+            }
+        }.start();
+
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/config.fxml"));
-            Parent root = loader.load();
-            this.mainStage = primaryStage;
-            MainController controller = loader.getController();
-            controller.setMain(this);
-            primaryStage.setTitle("Mybatis辅助工具(作者:叶佩)");
-            Image image = null;
-            try {
-                image = new Image("/image/icon.png");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            if (image != null) {
-                primaryStage.getIcons().add(image);
-            }
-            primaryStage.setScene(new Scene(root, 800, 600));
-            primaryStage.show();
-        } catch (Exception e) {
-            FXOptionPane.showMessageDialog(primaryStage, e.getMessage(), "错误");
+            latch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-    }
-
-    public Stage getMainStage() {
-        return mainStage;
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

@@ -6,7 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
-import yp.dev.tools.Main;
+import yp.dev.tools.JavaFxBootStrap;
 import yp.dev.tools.builder.GeneratorBuilder;
 import yp.dev.tools.pojo.Config;
 import yp.dev.tools.pojo.Table;
@@ -72,7 +72,7 @@ public class MainController {
     //
     @FXML
     private TextField targetDir;
-    private Main main;
+    private JavaFxBootStrap javaFxBootStrap;
     private String homeDesktop = FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath();
     private String defaultDir = Paths.get(homeDesktop, "MybatisHelper").toString();
 
@@ -137,17 +137,17 @@ public class MainController {
 
         Validator v = validateDatasource(dbIp, dbPort, dbUser, dbPwd, dbName, dbTable);
         if (!v.isSucc()) {
-            FXOptionPane.showMessageDialog(main.getMainStage(), v.getMsg(), "错误");
+            FXOptionPane.showMessageDialog(javaFxBootStrap.getMainStage(), v.getMsg(), "错误");
             return;
         }
 
         Validator v2 = validatePackages(daoPackage, daoAnnos, pojoPackage, pojoAnnos);
         if (!v2.isSucc()) {
-            FXOptionPane.showMessageDialog(main.getMainStage(), v2.getMsg(), "错误");
+            FXOptionPane.showMessageDialog(javaFxBootStrap.getMainStage(), v2.getMsg(), "错误");
             return;
         }
         if (!(selectById || selectByIds || insert || insertSelective || updateById || updateSelectiveById || deleteById || deleteByIds)) {
-            FXOptionPane.showMessageDialog(main.getMainStage(), "至少选择一个Dao方法", "错误");
+            FXOptionPane.showMessageDialog(javaFxBootStrap.getMainStage(), "至少选择一个Dao方法", "错误");
         }
 
         if (StringUtil.isBlank(targetDirectory)) {
@@ -218,14 +218,14 @@ public class MainController {
         DirectoryChooser chooser = new DirectoryChooser();
         chooser.setTitle("选择结果保存位置...");
         chooser.setInitialDirectory(new File(homeDesktop));
-        File f = chooser.showDialog(main.getMainStage());
+        File f = chooser.showDialog(javaFxBootStrap.getMainStage());
         if (f != null) {
             this.targetDir.setText(f.getAbsolutePath());
         }
     }
 
-    public void setMain(Main main) {
-        this.main = main;
+    public void setJavaFxBootStrap(JavaFxBootStrap javaFxBootStrap) {
+        this.javaFxBootStrap = javaFxBootStrap;
     }
 
     public void testDatasource(ActionEvent actionEvent) {
@@ -240,9 +240,9 @@ public class MainController {
         }
         Validator v = validateDatasource(dbIp, dbPort, dbUser, dbPwd, dbName, dbTable);
         if (!v.isSucc()) {
-            FXOptionPane.showMessageDialog(main.getMainStage(), v.getMsg(), "错误");
+            FXOptionPane.showMessageDialog(javaFxBootStrap.getMainStage(), v.getMsg(), "错误");
         } else {
-            FXOptionPane.showMessageDialog(main.getMainStage(), "连接成功", "提示");
+            FXOptionPane.showMessageDialog(javaFxBootStrap.getMainStage(), "连接成功", "提示");
         }
     }
 
@@ -260,9 +260,9 @@ public class MainController {
                     .setMethodSignatures(conf.parseMethods())
                     .setPojoSuffix(conf.getPojoSuffix());
             builder.generate();
-            FXOptionPane.showMessageDialog(main.getMainStage(), "生成成功", "成功");
+            FXOptionPane.showMessageDialog(javaFxBootStrap.getMainStage(), "生成成功", "成功");
         } catch (Exception e) {
-            FXOptionPane.showMessageDialog(main.getMainStage(), "系统异常:" + e.getMessage(), "错误");
+            FXOptionPane.showMessageDialog(javaFxBootStrap.getMainStage(), "系统异常:" + e.getMessage(), "错误");
             e.printStackTrace();
         } finally {
             IOUtil.close(conn);

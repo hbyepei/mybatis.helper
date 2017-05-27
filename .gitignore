@@ -6,8 +6,6 @@ target/
 
 # java ignore
 out/
-lib/
-
 
 # eclipse ignore
 .settings/

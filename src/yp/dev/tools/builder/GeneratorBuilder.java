@@ -1,5 +1,5 @@
 package yp.dev.tools.builder;
-import yp.dev.tools.Main;
+import yp.dev.tools.JavaFxBootStrap;
 import yp.dev.tools.pojo.PojoInfo;
 import yp.dev.tools.pojo.Table;
 import yp.dev.tools.util.CollectionUtil;
@@ -69,7 +69,7 @@ public class GeneratorBuilder {
             builder = new GeneratorBuilder();
             builder.tables = tables;
             if (targetDir == null) {
-                targetDir = new File(Paths.get(FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath(), Main.class.getSimpleName()).toString());
+                targetDir = new File(Paths.get(FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath(), JavaFxBootStrap.class.getSimpleName()).toString());
             }
             if (!targetDir.exists()) {
                 IOUtil.createDir(targetDir);
