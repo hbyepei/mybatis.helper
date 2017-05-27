@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>yp.tools.plugin.swords</id>
     <name>Swords</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <vendor email="hbyepei@qq.com" url="http://www.cnblogs.com/yepei">一人浅醉-</vendor>
 
     <description><![CDATA[
