@@ -1,0 +1,45 @@
+<idea-plugin>
+    <id>yp.tools.plugin.swords</id>
+    <name>Swords</name>
+    <version>1.0.0</version>
+    <vendor email="hbyepei@qq.com" url="http://www.cnblogs.com/yepei">一人浅醉-</vendor>
+
+    <description><![CDATA[
+      Swords, a wonderful mybatis code generator<br>
+      <em>
+        <ol>swords插件是一个很好用的插件，可以根据配置的mysqlDatasource自动生成dao层代码、bean代码以及mybatis的xml文件。</ol>
+        <ol>作者：叶佩，如有问题，请联系QQ:519549317@qq.com</ol>
+      </em>
+      <br>
+      <b>使用方法:</b>
+      <p>安装好本插件后，重启IDE然后，在菜单栏中的Tools选项中，选择“Swords”！</p>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      优化跨平台支持.<br>
+      <em>解决windows平台下插件目录获取错误的问题.</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="145.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="swords" class="yp.dev.tools.Main" text="Swords"
+                description="Mybatis辅助代码生成工具">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+    <!--idea author: hbyepei/yepei2011-->
+</idea-plugin>
