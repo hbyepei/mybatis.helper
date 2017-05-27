@@ -4,8 +4,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 
-import java.util.concurrent.CountDownLatch;
-
 /**
  * Author:yepei@meituan.com
  * Date:2017/5/27
@@ -19,7 +17,6 @@ public class Main extends AnAction {
         Project project = event.getData(PlatformDataKeys.PROJECT);
         final String[] args = new String[]{};
         final ClassLoader loader = JavaFxBootStrap.class.getClassLoader();
-        final CountDownLatch latch = new CountDownLatch(1);
         new Thread() {
             @Override
             public void run() {
@@ -28,16 +25,8 @@ public class Main extends AnAction {
                     JavaFxBootStrap.main(args);
                 } catch (Exception e) {
                     e.printStackTrace();
-                } finally {
-                    latch.countDown();
                 }
             }
         }.start();
-
-        try {
-            latch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }
